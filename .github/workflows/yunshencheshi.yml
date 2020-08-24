@@ -147,7 +147,7 @@ jobs:
         echo "::warning file=cowtransfer.com::$(cat cowtransfer.log | grep https)"
   TZ: Asia/Shanghai
 
-    - name: 将固件上传到WeTransfer
+    - name:  将固件上传到 WeTransfer
       if: steps.organize.outputs.status == 'success' && env.UPLOAD_WETRANSFER == 'true' && !cancelled()
       run: |
         curl -fsSL git.io/file-transfer | sh
